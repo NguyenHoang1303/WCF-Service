@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmployeeService.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -14,12 +15,12 @@ namespace EmployeeService
     {
 
         [OperationContract]
-        string GetData(int value);
+        Employee Save(Employee employee);
+        [OperationContract]
+        List<Employee> FindAll();
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
-
-        // TODO: Add your service operations here
+        List<Employee> FindEmployeeByDepartment(string deparment);
     }
 
 
